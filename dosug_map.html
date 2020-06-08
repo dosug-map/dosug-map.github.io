@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Карта досуговых организаций города Перми</title>
+        <link rel="stylesheet" type="text/css" href="style_dosug_map.css">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/css/main.css">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.14/dgrid/css/dgrid.css">
+        <script src="https://js.arcgis.com/4.14/"></script>
+    </head>
+    <body>
+        <div id="main_title">ДОСУГОВЫЕ ОРГАНИЗАЦИИ ПЕРМИ
+            <div id="gerb-perm"><a href="https://www.gorodperm.ru/" target="_blank"> <img src="gerb-perm.jpg" height="40px"></a></div>
+        </div>
+        <div id="form-org">
+            <span id="close-but" class="close"></span>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3og9SYPIDbyfio3waDt3FhoE9LXw0SdXpok8U3B2OQfWPQg/viewform?embedded=true" 
+            width="100%" height="600px" frameborder="0"></iframe>
+        </div>
+        <div id="r-buttons" class="esri-widget">
+            <h2><b>Выбрать категорию</b><br><b>видов деятельности</b><br><br></h2>
+            <input type="radio" id="r1" name="categ" value="Здоровье">Здоровье<br>
+            <input type="radio" id="r2" name="categ" value="Спорт">Спорт<br>
+            <input type="radio" id="r3" name="categ" value="Культура">Культура<br>
+            <input type="radio" id="r4" name="categ" value="Обучение и развитие">Обучение и развитие<br>
+            <input type="radio" id="r5" name="categ" value="Творчество">Творчество<br>
+            <input type="radio" id="r6" name="categ" value="Танцы и вокал">Танцы и вокал<br><br>
+            <input type="radio" id="r7" name="categ" value="Снять выбор" checked>Снять выбор<br>
+        </div>
+        <div id="search"></div>
+        <div id="gridDiv" class="esri-widget">
+            <div id="gridDiv2">
+                <h2>Досуговые организации</h2>
+                <p>
+                Кликните по значку организации на карте, чтобы узнать подробную информацию.
+                </p>
+            </div>
+            <div id="gridDiv3">
+                <h2>Информация о досуговой организации</h2>
+            </div>
+            <div id="infos"></div>
+            <div id="infos2"></div>
+            <div id="ots"></div>
+            <div id="queryResults"></div>
+            <button id="clearButton" class="esri-widget">Закрыть</button>
+        </div>
+        <div id="viewDiv"></div>
+        <div id="overviewDiv">
+            <div id="ovwButton"
+            class="ovwHide"
+            title="Показать обзорную карту"></div>
+            <div id="extentDiv"></div>
+        </div>
+        <div id="line-button" class="esri-widget esri-widget--button esri-interactive" 
+            title="Построить буферную зону">
+		    <span class="esri-icon-radio-checked"></span>
+        </div>
+        <div id="topbar">
+            <button class="action-button esri-icon-minus" id="distanceButton" type="button"
+            title="Измерение расстояний"></button>
+            <button class="action-button esri-icon-polygon" id="areaButton" type="button"
+            title="Измерение площадей"></button>
+        </div>
+        <button id="clearGraph" title="Очистить графику" class="esri-icon-trash"></button>
+        <div id="info_d" contenteditable="true"></div>
+        <div id="bottom-buttons"></div>
+        <div class="dobav-org" id="dobav-org"><b>⊕ Добавить организацию на карту</b></div>
+        <div id="min-legend"><b>▲ Показать легенду ▲</b></div>
+        <div id="min-legend2"><b>▼ Скрыть легенду ▼</b></div>
+        <div id="legend"></div>
+        <div id="min-list"><b>▲ Показать список слоев ▲</b></div>
+        <div id="min-list2"><b>▼ Скрыть список слоев ▼<b></div>
+        <div id="layer-list"></div>
+        <div id="coordsWidgetBack-none"></div>
+        <div id="coordsWidget"></div>
+        <div id="scalebar"></div>
+        
+        <script type="text/javascript" src="script_dosug_map.js"></script>
+    </body>
+</HTML>
